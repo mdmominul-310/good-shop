@@ -5,36 +5,116 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FakeStore</title>
+  <title>SuperShop</title>
   <link rel="stylesheet" href="./css/style.css" />
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 
   <!-- google Montserrat  font  -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/7071453e3e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <header></header>
-  <main class="main">
-    <div class="search-field">
-      <div class="search-box">
-        <input id="input-field" class="search-field" type="text" />
-        <button type="button" class="btn btn-primary search-button" data-toggle="button" aria-pressed="false"
-          autocomplete="off" id="search-btn" onclick="loadProducts()">
-          Search
-        </button>
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6 col-md-6">
+          <nav class="navbar navbar-expand-xl navbar-light">
+            <div class="container-fluid">
+              <a href="#" class="navbar-brand"><img src="images/logo.png" alt="logo" class="img-fluid" /></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mx-auto">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Shirt</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Pant</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      Other
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" href="#">Shirt</a></li>
+                      <li><a class="dropdown-item" href="#">Pant</a></li>
+                      <li><a class="dropdown-item" href="#">Others</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <div class="col-lg-4 col-md-3">
+          <div class="header-search mt-2">
+            <div class="search-form">
+              <form method="get">
+                <div class="input-group">
+                  <div class="select-style">
+                    <select name="order">
+                      <option class="topshow" value="1">All</option>
+                      <option value="a">Shirt</option>
+                      <option value="b">Pant</option>
+                    </select>
+                  </div>
+                  <input type="text" name="search" id="search" class="form-control" placeholder="Search Here" />
+                  <div class="input-group-addon">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 cart-login">
+          <div class="d-flex">
+            <div class="float-end cart mt-2">
+              <a href="#">
+                <span class="number" id="cart-num"></span>
+                <i class="fas fa-shopping-cart"></i>
+
+              </a>
+            </div>
+            <div class="">
+              <button type="button" class="btn btn-light mt-2 btn-sm">Login</button>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
+  </header>
+  <!-- main sectin start  -->
+  <main class="main container my-5">
+    <!-- search feild  -->
+    <h1 class="text-center">Product On <span class="text-danger">Trending</span></h1>
     <div class="row">
+
+      <!-- products feild  -->
       <div class="col-md-9 col-lg-9 col-sm-7">
-        <div id="all-products" class="">
-          <h1></h1>
+        <div id="product-details">
+          <!--Section: Block Content-->
+
+          <!--Section: Block Content-->
+        </div>
+        <div id="all-products" class="card-group">
+
         </div>
       </div>
+      <!-- cart section  -->
       <div class="col-md-3 col-lg-3 col-sm-5 cart-main">
         <div class="cart" id="my-cart">
           <table class="table">
@@ -50,7 +130,7 @@
             <tbody>
               <tr>
                 <th>Total Added-Products:</th>
-                <td>$ <span id="total-Products">0</span></td>
+                <td><span id="total-Products">0</span></td>
                 <td></td>
                 <td></td>
               </tr>
@@ -80,16 +160,18 @@
             </tbody>
           </table>
           <div class="parces text-center">
-            <button class="btn btn-primary text-center">Buy Now</button>
+            <button onclick="" class="btn btn-primary text-center">Buy Now</button>
           </div>
         </div>
       </div>
     </div>
   </main>
   <footer></footer>
+  <!-- bootstrap js  -->
 
+  <script src="js/bootstrap.bundle.min.js"></script>
   <!-- add javascript  file  -->
-  <script src="./js/app.js"></script>
+  <script src="js/app.js"></script>
 </body>
 
 </html>
